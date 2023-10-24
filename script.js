@@ -26,6 +26,7 @@ const dotSize = 10
 let particleArray = [];
 let hue = 180;
 const displayParticlesTrail = true
+const nbParticles = 4
 const mouse = { x: undefined, y: undefined }
 
 const canvas = qs('#canvas1');
@@ -38,32 +39,22 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 })
 
-canvas.addEventListener('click', (e) => {
-  mouse.x = e.x;
-  mouse.y = e.y;
-})
-
 canvas.addEventListener('mousemove', (e) => {
   mouse.x = e.x;
   mouse.y = e.y;
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < nbParticles; i++) {
     particleArray.push(new Particle());
   }
 })
-
-function init() {
-  for (let i = 0; i < 100; i++) {
-    particleArray.push(new Particle());
-  }
-}
-init()
 
 function animate() {
 
   if (displayParticlesTrail) {
+    // Add a semi-transparent black rectangle at each frame
     ctx.fillStyle = 'rgba(0,0,0,0.15)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   } else {
+    // Reset the background with an opaque black rectangle
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 
