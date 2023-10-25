@@ -26,7 +26,7 @@ const dotSize = 10
 let particleArray = [];
 let hue = 180;
 const displayParticlesTrail = true
-const nbParticles = 15
+const nbParticles = 10
 const mouse = { x: undefined, y: undefined }
 
 const canvas = qs('#canvas1');
