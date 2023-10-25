@@ -40,23 +40,23 @@ window.addEventListener('resize', () => {
 
 // Desktop event listener
 canvas.addEventListener('mousemove', (e) => {
-  mouse.x = e.x;
-  mouse.y = e.y;
-  for (let i = 0; i < nbParticles; i++) {
-    particleArray.push(new Particle());
-  }
+  onMove(e.x, e.y)
 })
 
 // Mobile event listener
 canvas.addEventListener('touchmove', (e) => {
   [...e.changedTouches].forEach(touch => {
-    mouse.x = touch.pageX;
-    mouse.y = touch.pageY;
-    for (let i = 0; i < nbParticles; i++) {
-      particleArray.push(new Particle());
-    }
+    onMove(touch.pageX, touch.pageY)
   })
 })
+
+function onMove(x, y) {
+  mouse.x = x;
+  mouse.y = y;
+  for (let i = 0; i < nbParticles; i++) {
+    particleArray.push(new Particle());
+  }
+}
 
 function animate() {
 
