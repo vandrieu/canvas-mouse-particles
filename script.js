@@ -22,7 +22,6 @@ class Particle {
   }
 }
 
-const dotSize = 10
 let particleArray = [];
 let hue = 180;
 const displayParticlesTrail = true
