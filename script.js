@@ -48,10 +48,7 @@ canvas.addEventListener('mousemove', (e) => {
   }
 })
 
-// Mobile event listeners
-canvas.addEventListener('touchstart', (e) => {
-  e.preventDefault() // prevents standard touch behaviour from the browser (pull down to refresh, etc.)
-})
+// Mobile event listener
 canvas.addEventListener('touchmove', (e) => {
   [...e.changedTouches].forEach(touch => {
     mouse.x = touch.pageX;
