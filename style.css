@@ -1,4 +1,5 @@
 html {
+  /* Disable pull-to-refresh and other built-in browser gestures */
   overflow: hidden;
   overscroll-behavior: none;
 }
